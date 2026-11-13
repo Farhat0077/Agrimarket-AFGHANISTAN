@@ -1,0 +1,23 @@
+{
+  "name": "agrimarket-afghanistan",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "latest",
+    "@vitejs/plugin-react": "latest",
+    "lucide-react": "^1.72.0",
+    "motion": "^14.12.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest",
+    "recharts": "latest",
+    "tailwindcss": "latest",
+    "vite": "latest"
+  }
+}

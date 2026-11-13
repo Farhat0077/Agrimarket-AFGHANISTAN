@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Marketplace horizontal slider */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Price range slider */
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #54815a;
+  border: 3px solid white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #54815a;
+  border: 3px solid white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------------------------------------------------ */
+/* Light theme base                                                    */
+/* ------------------------------------------------------------------ */
+:root{font-family:'DM Sans',sans-serif;color:#202a23;background:#fbfaf6;font-synthesis:none;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:320px}
+button,input,select,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+.font-display{font-family:Manrope,sans-serif}
+.container{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+.eyebrow{font-size:11px;letter-spacing:.17em;font-weight:800;color:#5d8653;text-transform:uppercase}
+.section-title{font-family:Manrope,sans-serif;font-size:clamp(30px,4vw,48px);line-height:1.1;letter-spacing:-.045em;font-weight:800;color:#1c3023}
+.muted{color:#737c74}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#28613a;color:#fff;border-radius:999px;padding:13px 21px;font-weight:700;transition:.2s}
+.btn-primary:hover{background:#1b482b;transform:translateY(-2px)}
+.btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid #d7dfd3;color:#23432c;border-radius:999px;padding:12px 20px;font-weight:700;transition:.2s}
+.btn-outline:hover{border-color:#28613a;background:#f0f5ed}
+.card{background:#fff;border:1px solid #e9ece5;border-radius:20px;box-shadow:0 8px 30px #20332308}
+.field{width:100%;border:1px solid #dfe5dc;border-radius:12px;padding:12px 14px;background:#fff;outline:none}
+.field:focus{border-color:#679568;box-shadow:0 0 0 3px #67956820}
+.tag{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:700;background:#edf5e9;color:#3b7040}
+.page-shell{min-height:75vh;padding:52px 0 90px}
+.nav-link{font-size:13px;font-weight:600;color:#4f5b51;transition:.2s}
+.nav-link:hover{color:#28613a}
+.product-image{height:190px;width:100%;object-fit:cover;border-radius:15px;background:#eef1e9}
+.dashboard-nav a{display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;color:#637064;font-size:13px;font-weight:600}
+.dashboard-nav a.active,.dashboard-nav a:hover{background:#eaf2e5;color:#245a34}
+.line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:700px){.container{width:min(100% - 32px,1180px)}.page-shell{padding:34px 0 64px}}
+
+/* VerdaAgro-inspired visual refinement: editorial farm photography, warm neutrals and botanical greens. */
+.site-header{background:rgba(251,250,246,.94);border-color:#e9ece5}
+.theme-toggle{width:38px;height:38px;display:inline-grid;place-items:center;border:1px solid #dce4d8;border-radius:50%;color:#315d39;background:rgba(255,255,255,.7);transition:.2s}
+.theme-toggle:hover{background:#eaf2e5;transform:translateY(-1px)}
+.nav-utility{color:#566256}
+.mobile-menu{background:#fbfaf6;border-color:#e9ece5}
+.hero-photo{box-shadow:0 24px 70px rgba(27,54,33,.16)}
+.hero-photo img{transition:transform 1.2s ease}
+.hero-photo:hover img{transform:scale(1.035)}
+@media(max-width:700px){.theme-toggle{width:36px;height:36px}}
+
+.language-control{display:inline-flex;align-items:center;gap:5px;border:1px solid #dce4d8;border-radius:999px;padding:8px 10px;background:rgba(255,255,255,.72);color:#426348}
+.language-control select{appearance:none;border:0;background:transparent;color:inherit;font-size:11px;font-weight:700;outline:0;cursor:pointer;max-width:64px}
+
+/* ------------------------------------------------------------------ */
+/* Dark theme                                                          */
+/* One palette, defined once, reused everywhere.                       */
+/*   bg-base    #0f1812   page                                         */
+/*   bg-raised  #172319   header, cards, panels                        */
+/*   bg-soft    #1e2d22   tinted / hover surfaces                      */
+/*   border     #2f4033                                                */
+/*   text       #e6eee2   headings and body                            */
+/*   text-soft  #a9b8a8   muted text                                   */
+/*   accent     #8fcf86   links, eyebrow, icons                        */
+/*   brand      #3a8a52   primary buttons                              */
+/* ------------------------------------------------------------------ */
+.dark{
+  --d-base:#0f1812;
+  --d-raised:#172319;
+  --d-soft:#1e2d22;
+  --d-border:#2f4033;
+  --d-text:#e6eee2;
+  --d-text-soft:#a9b8a8;
+  --d-accent:#8fcf86;
+  --d-brand:#3a8a52;
+  --d-brand-hover:#46a062;
+  color-scheme:dark;
+}
+.dark,.dark body{background:var(--d-base);color:var(--d-text)}
+.dark ::selection{background:#3a8a5266}
+
+/* Header / menus / language / toggle */
+.dark .site-header{background:rgba(15,24,18,.92);border-color:var(--d-border);backdrop-filter:blur(10px)}
+.dark .mobile-menu{background:var(--d-raised);border-color:var(--d-border)}
+.dark .theme-toggle,
+.dark .language-control{background:var(--d-raised);border-color:var(--d-border);color:var(--d-accent)}
+.dark .theme-toggle:hover{background:var(--d-soft)}
+.dark .language-control select{color:var(--d-text)}
+.dark .language-control option{background:var(--d-raised);color:var(--d-text)}
+.dark .nav-link,
+.dark .nav-utility{color:var(--d-text-soft)}
+.dark .nav-link:hover{color:var(--d-accent)}
+.dark .site-header .font-display{color:var(--d-text)}
+
+/* Typography */
+.dark h1,.dark h2,.dark h3,.dark h4,
+.dark .section-title,
+.dark .font-display{color:var(--d-text)}
+.dark .muted{color:var(--d-text-soft)}
+.dark .eyebrow{color:var(--d-accent)}
+.dark a:not(.btn-primary):not(.btn-outline):hover{color:var(--d-accent)}
+
+/* Surfaces */
+.dark .card,
+.dark .bg-white,
+.dark .product-card,
+.dark article{background:var(--d-raised);border-color:var(--d-border);color:var(--d-text)}
+.dark .card{box-shadow:0 8px 30px rgba(0,0,0,.28)}
+.dark .page-shell{background:var(--d-base)}
+.dark .product-image{background:var(--d-soft)}
+.dark .shadow,.dark .shadow-sm,.dark .shadow-md,.dark .shadow-lg,.dark .shadow-xl{--tw-shadow-color:rgba(0,0,0,.35)}
+
+/* Forms */
+.dark .field,
+.dark input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+.dark select,
+.dark textarea{background:var(--d-raised);border-color:var(--d-border);color:var(--d-text)}
+.dark .field:focus,
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus{border-color:var(--d-brand);box-shadow:0 0 0 3px rgba(58,138,82,.3)}
+.dark .field::placeholder,
+.dark input::placeholder,
+.dark textarea::placeholder{color:#7f8f80}
+.dark select option{background:var(--d-raised);color:var(--d-text)}
+.dark input[type="range"]::-webkit-slider-thumb{background:#5cb274;border-color:var(--d-raised)}
+.dark input[type="range"]::-moz-range-thumb{background:#5cb274;border-color:var(--d-raised)}
+.dark input[type="range"]{accent-color:#5cb274}
+
+/* Buttons & tags */
+.dark .btn-primary{background:var(--d-brand);color:#fff}
+.dark .btn-primary:hover{background:var(--d-brand-hover)}
+.dark .btn-outline{background:transparent;border-color:#46604a;color:var(--d-text)}
+.dark .btn-outline:hover{background:var(--d-soft);border-color:var(--d-accent)}
+.dark .tag{background:#223a28;color:#bfe5b6}
+
+/* Dashboard */
+.dark .dashboard-nav a{color:var(--d-text-soft)}
+.dark .dashboard-nav a.active,
+.dark .dashboard-nav a:hover{background:var(--d-soft);color:var(--d-accent)}
+
+/* Borders (only neutral ones, so colored borders keep working) */
+.dark .border:not([class*="border-["]),
+.dark .border-t,.dark .border-b,.dark .border-l,.dark .border-r,
+.dark .divide-y>*+*{border-color:var(--d-border)}
+.dark :is([class^="border-[#"],[class*=" border-[#"]){border-color:var(--d-border)}
+
+/* ---- Tailwind arbitrary hex classes written for light mode ---------
+   Matches by first hex digit so every light tint is covered without
+   listing each color. The " " prefix avoids matching hover:/focus:
+   variants, which would otherwise always be applied.                  */
+
+/* Light backgrounds (#f…, #e…, #d…) -> soft dark surface */
+.dark :is([class^="bg-[#f"],[class*=" bg-[#f"],
+          [class^="bg-[#e"],[class*=" bg-[#e"],
+          [class^="bg-[#d"],[class*=" bg-[#d"]):not([class*="]/"]){background-color:var(--d-soft)}
+
+/* Semi-transparent light overlays (e.g. bg-[#eaf1e3]/70) stay translucent */
+.dark :is([class^="bg-[#f"],[class*=" bg-[#f"],
+          [class^="bg-[#e"],[class*=" bg-[#e"],
+          [class^="bg-[#d"],[class*=" bg-[#d"])[class*="]/"]{background-color:rgba(15,24,18,.55)}
+
+/* Dark text (#1…–#4…) -> light text */
+.dark :is([class^="text-[#1"],[class*=" text-[#1"],
+          [class^="text-[#2"],[class*=" text-[#2"],
+          [class^="text-[#3"],[class*=" text-[#3"],
+          [class^="text-[#4"],[class*=" text-[#4"]){color:var(--d-text)}
+
+/* Mid-tone text (#5…–#8…) -> soft light text */
+.dark :is([class^="text-[#5"],[class*=" text-[#5"],
+          [class^="text-[#6"],[class*=" text-[#6"],
+          [class^="text-[#7"],[class*=" text-[#7"],
+          [class^="text-[#8"],[class*=" text-[#8"]){color:var(--d-text-soft)}
+
+/* Tailwind gray / slate / black text */
+.dark .text-black,.dark .text-gray-900,.dark .text-gray-800,.dark .text-gray-700{color:var(--d-text)}
+.dark .text-gray-600,.dark .text-gray-500,.dark .text-gray-400{color:var(--d-text-soft)}
+.dark .bg-gray-50,.dark .bg-gray-100{background-color:var(--d-soft)}
+
+/* Hover states written with arbitrary colors */
+.dark :is([class*="hover:bg-[#f"],[class*="hover:bg-[#e"]):hover{background-color:#26392b}
+
+/* ---- Hero section ---- */
+.dark .hero-photo{box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.dark .hero-photo .rounded-2xl{background:rgba(23,35,25,.92);color:var(--d-text);border-color:var(--d-border)}
+.dark section.relative.overflow-hidden.bg-\[\#eaf1e3\]{background:var(--d-raised)}
+.dark section.relative.overflow-hidden h1{color:var(--d-text)}
+.dark section.relative.overflow-hidden p{color:#bccab7}
+.dark section.relative.overflow-hidden .absolute.inset-0.bg-gradient-to-r{
+  background:linear-gradient(90deg,var(--d-raised) 0%,rgba(23,35,25,.88) 50%,rgba(23,35,25,.15) 100%)
+}
+
+/* Images: slightly tone down brightness so photos don't glare on dark */
+.dark img:not([src$=".svg"]){filter:brightness(.92) contrast(1.03)}
+
+/* Video: always visible in dark mode, never covered by a theme background */
+.dark video{opacity:1;visibility:visible;filter:none;background:transparent;mix-blend-mode:normal}
+.dark .hero-photo,
+.dark .hero-photo video{background:transparent}
+/* Keep the home hero footage vivid and visible while preserving text contrast. */
+.hero-background-video{opacity:1;filter:brightness(1.08) saturate(1.12) contrast(1.03);}
+/* In dark mode, lift the footage itself rather than placing a heavy tint over it. */
+.dark .hero-background-video{opacity:1;filter:brightness(1.38) saturate(1.22) contrast(1.08);}
+/* Keep the legacy dark-section tint rules from masking the home hero footage. */
+.dark .hero-video-hero .absolute.inset-0.bg-gradient-to-r{background:linear-gradient(90deg,rgba(23,35,25,.18) 0%,rgba(23,35,25,.08) 52%,rgba(23,35,25,0) 100%);}
+.dark .hero-video-hero h1{color:#fff;}
+.dark .hero-video-hero p{color:#f0f2e9;}
+@media (prefers-reduced-motion: reduce){.hero-background-video{filter:brightness(1.08) saturate(1.08)}.dark .hero-background-video{filter:brightness(1.3) saturate(1.16)}}
